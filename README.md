@@ -1,4 +1,4 @@
-# Erndwein_et_al_2021
+# Hostetler_Erndwein_et_al_2021
 Data and code associated with Erndwein et al., 2021.
 
 Folder contents
