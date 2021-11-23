@@ -1,5 +1,5 @@
 # Hostetler_Erndwein_et_al_2021
-Data and code associated with Erndwein et al., 2021.
+Data and code associated with Hostetler and Erndwein et al., 2021.
 
 Folder contents
 1. Figures: Zip with all tiff files form main and supplementary figures in manuscript as well as the original adobe illustrator file and supplemental tables
