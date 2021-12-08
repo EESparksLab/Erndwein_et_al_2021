@@ -2,10 +2,13 @@
 Data and code associated with Hostetler and Erndwein et al., 2021.
 
 Folder contents
-1. Figures: Zip with all tiff files form main and supplementary figures in manuscript as well as the original adobe illustrator file and supplemental tables
-2. Instron raw data: Raw data CSV and PDF files for all mechanical testing data measured using Instron testing machine/Bluehill 3 software
-4. Python code: code for extracting UL and BL from Instron raw data CSV files
-5. R code and working CSVs: R code for constructing all figures in manuscript and companion CSV files
-6. Raw data spreadsheet: Original spreadhseets used for recording mechanical properties, recording geometry from microCT scans, and calculating moments of inertia and material properties of maize brace roots 
+1. Instron raw data: Raw data CSV and PDF files for all mechanical testing data measured using Instron testing machine/Bluehill 3 software
+
+2. R Scripts and Associated Data: Three R scripts are included: 
+1) R Script to process raw 2019 data (called 2019_DataProcessing.R); 
+2) R Script to process raw 2020 data (called 2020_DataProcessing.R); 
+3) R Script to analyze processed data and generate Figures (called Hostetler_and_Erndwein_et_al_DataAnalysisScript_Version1_12082021.R). Note - the script Hostetler_and_Erndwein_et_al_DataAnalysisScript_Version1_12082021.R is outlined into sections: 1) Methods, 2) Results. In the Results section, data is outlined and header is associated with manuscript header.
+
+3. Raw data: Original data files (unprocessed) used for recording mechanical properties, recording geometry from microCT scans, and calculating moments of inertia and material properties of maize brace roots 
 
 Raw MicroCT scans used in this study are too large for this repository, but available on request. Please email braceroots@gmail.com for access to raw scans.
