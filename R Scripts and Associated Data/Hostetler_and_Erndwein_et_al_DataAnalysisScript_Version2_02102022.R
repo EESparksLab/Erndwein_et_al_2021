@@ -1,4 +1,4 @@
-#Script Associated with Hostetler_and_Erndwein_Version1_12082021.docx
+#Script Associated with Hostetler_and_Erndwein_Version2_02102022.docx
 library(tidyverse)
 library(rcompanion) #Tukey transformations
 library(agricolae) #TukeyHSD
@@ -13,7 +13,7 @@ rm(list=ls())
 ls() 
 setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R/")
 getwd()
-data = read.csv(file= "ProcessedData_2019_11082021.csv", header = TRUE, na.strings = "NA")
+data = read.csv(file= "ProcessedData_2019_02102022.csv", header = TRUE, na.strings = "NA")
 #Remove plants that only have 1 whorl of data
 head(data)
 x = data %>%    #identify how many unique 'ID's only appear once, suggesting there is only 1 observation for this plant, plot, rep
@@ -257,7 +257,7 @@ ls()
 setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R/")
 getwd()
 ####Figure3A-B, TableS1-S2: Overall Contribution not broken down by whorl#####
-data6 = read.csv(file = "/Users/ashleyhostetler/Desktop/55Genos/AnalysisFiles/Inbred_Subpop_2Years_Broot_Ratio.csv", header = TRUE, na.strings = "NA")
+data6 = read.csv(file = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R/Inbred_Subpop_2Years_Broot_Ratio.csv", header = TRUE, na.strings = "NA")
 data6 = data6[,c(1,3,5,6,12,13)]
 head(data6)
 data = subset(data6, Year=="2019")
@@ -339,7 +339,7 @@ Fig2B = ggplot(data6, aes(x=Brace.Root.Whorls.in.the.Soil, y=Ratio..None.All....
   theme(legend.position = "none")
 Fig2B
 ####Figure3C, TableS1-S2: Individual whorl ratio####
-data = read.csv(file = "/Users/ashleyhostetler/Desktop/55Genos/AnalysisFiles/Inbred_Subpop_2Years_EI_All.csv", header = TRUE, na.strings = "NA")
+data = read.csv(file = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R/Inbred_Subpop_2Years_EI_All.csv", header = TRUE, na.strings = "NA")
 data$ID = paste(data$Plot.ID, data$Plant.Number, sep="_")
 data = data[,c(1,3,5,6,28,8,14,15)]
 head(data)
@@ -453,7 +453,7 @@ ls()
 setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R/")
 getwd()
 
-data7 = read.csv(file= "ProcessedData_2019_11082021.csv", header = TRUE, na.strings = "NA")
+data7 = read.csv(file= "ProcessedData_2019_02102022.csv", header = TRUE, na.strings = "NA")
 
 #Remove plants that only have 1 whorl of data
 head(data7)
@@ -781,7 +781,7 @@ Fig4F = ggplot(data7, aes(x=MOI_solid_AH, y=BL)) +
         strip.text.y = element_text(size = 11, colour = "black"),
         legend.title=element_blank())+
   labs(x="Moment of inertia (mm4)",y="Break load - BL (N)")
-Fig4G
+Fig4F
 cor.test (data7$MOI_solid_AH, data7$BL, use = "everything", method = c("pearson"))
 
 Figure4=plot_grid(Fig4A, Fig4B, Fig4C, Fig4D, Fig4E, Fig4F,  labels = c('A', 'B','C','D','E','F'), nrow = 2)
@@ -829,7 +829,7 @@ detach(data7)
 data7$Geno = factor(data7$Geno,levels = c("B73","Oh43","A632"))
 Fig5 = ggplot(data7, aes(x=WR_CHR, y=E_GPa_AH, color=Geno, fill=Geno)) +
   geom_point(position=position_jitterdodge())+
-  geom_boxplot(alpha=0.1, outlier.colour = "black", outlier.alpha = .5)+
+  geom_boxplot(alpha=0.1)+
   scale_fill_manual(values=c("#009999", "#663399", "#CC9900"))+
   scale_color_manual(values=c("#009999", "#663399", "#CC9900"))+
   labs(x="Whorl",y="Bending modulus - E (GPa)")+
@@ -858,7 +858,7 @@ rm(list=ls())
 ls() 
 setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R/")
 getwd()
-data7 = read.csv(file= "ProcessedData_2020_10272021.csv", header = TRUE, na.strings = "NA")
+data7 = read.csv(file= "ProcessedData_2020_02102022.csv", header = TRUE, na.strings = "NA")
 #Remove plants that only have 1 whorl of data
 head(data7)
 x = data7 %>%    #identify how many unique 'ID's only appear once, suggesting there is only 1 observation for this plant, plot, rep
@@ -1250,7 +1250,7 @@ setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R/")
 getwd()
 
 #R1/R2 Data
-data2020 = read.csv(file= "ProcessedData_2020_10272021.csv", header = TRUE, na.strings = "NA")
+data2020 = read.csv(file= "ProcessedData_2020_02102022.csv", header = TRUE, na.strings = "NA")
 head(data2020)
 x = data2020 %>%    #identify how many unique 'ID's only appear once, suggesting there is only 1 observation for this plant, plot, rep
   group_by(ID) %>%
@@ -1266,7 +1266,7 @@ data2020 = data2020[,c(1:8,16:17,13:15)]
 data2020$Year = "2020"
 
 #R6 Data
-data2019 = read.csv(file= "ProcessedData_2019_11082021.csv", header = TRUE, na.strings = "NA")
+data2019 = read.csv(file= "ProcessedData_2019_02102022.csv", header = TRUE, na.strings = "NA")
 ####Remove plants that only have 1 whorl of data
 head(data2019)
 x = data2019 %>%    #identify how many unique 'ID's only appear once, suggesting there is only 1 observation for this plant, plot, rep
@@ -1280,8 +1280,9 @@ data2019 = data2019[,c(1,2,5,7,4,12,13,14,22,21,17,19,20)]
 data2019$Year = "2019"
 
 data=rbind(data2019, data2020)
+#write.csv(data, file="2019-2020_Data_Combined_12012021.csv", row.names = TRUE)
 
-####Structural mechanical properties are variable by growth stage within a genotype: Figure 6, TableS7-S8####
+####Structural mechanical properties are variable by growth stage within a genotype: Figure 6-7, TableS7-S8####
 ###ANOVAs : Does structural mechanical properties and I differ between whorls,genotypes, and developmental stage
 attach(data)
 #Does K vary among whorls, genotypes, and developmental stage
@@ -1475,4 +1476,29 @@ Figure6
 
 pdf("Figure6.pdf", width = 4.25, height = 7.5)
 plot(Figure6)
+dev.off()
+
+
+####Figure Generation - Comparison of bending modulus within maize
+Figure7 = ggplot(data=data, aes(x=E_GPa_AH, group=Year, fill=Year)) +
+  geom_density(adjust=1.5, alpha=.5)+
+  scale_fill_manual(values=c("#009999", "#CC9900"))+
+  labs(x="E [GPa]",y="Density")+
+  theme(axis.text.x = element_text(size=11), 
+        axis.text.y = element_text(size=11), 
+        plot.title=element_text(size=11, vjust=3), 
+        axis.text=element_text(size=11), 
+        axis.title = element_text(size=11), 
+        axis.title.y= element_text(vjust=2.5), 
+        axis.title.x= element_text(vjust=-1.4), 
+        axis.ticks.length = unit(.2,"cm"),
+        strip.background = element_rect(fill="grey"),
+        strip.text.x = element_text(size = 11, colour = "black"),
+        strip.text.y = element_text(size = 11, colour = "black"),
+        legend.title=element_blank())+
+  theme(legend.position = "none")
+Figure7
+
+pdf("Figure7.pdf", width = 3.54, height = 4)
+plot(Figure7)
 dev.off()

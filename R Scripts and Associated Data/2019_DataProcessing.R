@@ -104,16 +104,16 @@ data3 = rbind(data3A, data3B, data3C)
 data4 = data3[grep("[[:digit:]]", data3$MinorD), ]
 str(data4)
 colnames(data4)
-i <- c(1:9)                          
+i = c(1:9)                          
 data4[,i] <- apply(data4[ ,i], 2,          
                    function(x) as.character(x))
-i <- c(10:17)                          
+i = c(10:17)                          
 data4[,i] <- apply(data4[ ,i], 2,  
                    function(x) as.numeric(x))
-i <- c(19:21)                    
+i = c(19:21)                    
 data4[,i] <- apply(data4[ ,i], 2,
                    function(x) as.numeric(x))
-i <- c(23:27)                    
+i = c(23:27)                    
 data4[,i] <- apply(data4[ ,i], 2,
                    function(x) as.numeric(x))
 
@@ -123,7 +123,10 @@ x = data4 %>%    #identify how many unique 'ID's only appear once, suggesting th
 x = as.data.frame(x) #convert to data frame
 x = x$ID
 x = as.list(x)
-data4 <- data4[ ! data4$ID %in% x, ] #remove rows from list (list was plants that only had 1 observation)
+data4 = data4[ ! data4$ID %in% x, ] #remove rows from list (list was plants that only had 1 observation)
+
+#Update K by a factor of 10
+data4$K = data4$K/10
 
 #Calculate means for all roots within plant within whorl 10/19/2021
 colnames(data4)
@@ -157,4 +160,4 @@ data6$MinorD_AH = (2*data6$ao)
 data6$MajorD_AH = (2*data6$bo)
 colnames(data6)
 data7 = data6[,c(1:10,15:17,21:28)]
-write.csv(data7, file="ProcessedData_2019_11082021.csv", row.names = TRUE)
+write.csv(data7, file="ProcessedData_2019_02102022.csv", row.names = TRUE)

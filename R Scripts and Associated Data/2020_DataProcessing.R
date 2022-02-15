@@ -32,6 +32,9 @@ data1 = rbind(datax, datay)
 
 data1$ID = paste(data1$Geno, data1$Plant, sep="_")
 
+#Update K by 10 fold 
+data1$K = data1$K/10
+
 #Calculate means for all roots within plant within whorl
 colnames(data1)
 data2 = data1[,c(17,1,2,16,5:7,9:15)]
@@ -66,4 +69,4 @@ data4 = data3[,c(1:11,15:17)]
 data4A = subset(data4, Geno == "B73")
 data4B = subset(data4, Geno == "Oh43")
 data4C = subset(data4, Geno == "A632")
-write.csv(data4, file="ProcessedData_2020_10272021.csv", row.names = TRUE)
+write.csv(data4, file="ProcessedData_2020_02102022.csv", row.names = TRUE)
