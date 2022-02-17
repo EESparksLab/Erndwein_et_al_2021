@@ -11,7 +11,7 @@ library(dplyr)
 cat("\014")
 rm(list=ls()) 
 ls() 
-setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R/")
+setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R Scripts and Associated Data/")
 getwd()
 data = read.csv(file= "ProcessedData_2019_02102022.csv", header = TRUE, na.strings = "NA")
 #Remove plants that only have 1 whorl of data
@@ -254,7 +254,7 @@ detach(data)
 cat("\014")
 rm(list=ls())
 ls()
-setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R/")
+setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R Scripts and Associated Data/")
 getwd()
 ####Figure3A-B, TableS1-S2: Overall Contribution not broken down by whorl#####
 data6 = read.csv(file = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R/Inbred_Subpop_2Years_Broot_Ratio.csv", header = TRUE, na.strings = "NA")
@@ -450,7 +450,7 @@ dev.off()
 cat("\014")
 rm(list=ls()) 
 ls() 
-setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R/")
+setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R Scripts and Associated Data/")
 getwd()
 
 data7 = read.csv(file= "ProcessedData_2019_02102022.csv", header = TRUE, na.strings = "NA")
@@ -464,6 +464,16 @@ x = as.data.frame(x) #convert to data frame
 x = x$ID
 x = as.list(x)
 data7 <- data7[ ! data7$ID %in% x, ] #remove rows from list (list was plants that only had 1 observation)
+
+####Span to depth ratio####
+head(data7)
+range(data7$ao)
+mean(data7$ao)
+17.5/(2*0.7625) #low value
+17.5/(2*2.9670) #high value
+17.5/(2*1.814219) #mean value
+
+
 
 ####Brace roots from whorls closer to the ground are stronger: Figure3, TableS3-S4####
 ####ANOVAS: Do structural mechanical properties differ between whorls and genotypes?
@@ -856,7 +866,7 @@ dev.off()
 cat("\014")
 rm(list=ls()) 
 ls() 
-setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R/")
+setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R Scripts and Associated Data/")
 getwd()
 data7 = read.csv(file= "ProcessedData_2020_02102022.csv", header = TRUE, na.strings = "NA")
 #Remove plants that only have 1 whorl of data
@@ -869,6 +879,14 @@ x = x$ID
 x = as.list(x)
 data7 <- data7[ ! data7$ID %in% x, ] #remove rows from list (list was plants that only had 1 observation)
 data7$Geno = factor(data7$Geno,levels = c("B73","Oh43","A632"))
+
+####Span to depth ratio####
+head(data7)
+range(data7$a)
+mean(data7$a)
+17.5/(2*1.69) #low value
+17.5/(2*3.19) #high value
+17.5/(2*2.412935) #mean value
 
 ####Brace root structural mechanical properties and geometry are genotype-dependent at early reproductive stages: FigureS4-S6, TableS3-S4 ####
 ####ANOVAs: Does structural mechanical properties differ between whorls and genotypes?
@@ -1246,7 +1264,7 @@ dev.off()
 cat("\014")
 rm(list=ls()) 
 ls() 
-setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R/")
+setwd(dir = "/Users/ashleyhostetler/Desktop/Hostetler_Erndwein_et_al_2021/R Scripts and Associated Data/")
 getwd()
 
 #R1/R2 Data
