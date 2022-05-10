@@ -1,5 +1,6 @@
 # Hostetler_Erndwein_et_al_2021
-Data and code associated with Hostetler and Erndwein et al., 2021.
+Data and code associated with Hostetler and Erndwein et al., Annals of Botany 2022.
+https://doi.org/10.1093/aob/mcac029
 
 Folder contents
 1. Instron raw data: Raw data CSV and PDF files for all mechanical testing data measured using Instron testing machine/Bluehill 3 software
